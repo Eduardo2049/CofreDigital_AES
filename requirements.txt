@@ -1,0 +1,7 @@
+A avaliacao ira recair integralmente sobre o codigo entregue e sobre as evidencias de que ele funciona conforme especificado.
+
+Especificacoes:
+
+
+
+
