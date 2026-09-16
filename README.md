@@ -4,7 +4,7 @@ API de cofre de credenciais desenvolvida para a disciplina de Criptografia Aplic
 
 ## Equipe
 
-Preencher com os nomes dos integrantes antes da entrega.
+- Eduardo Felipe Alves De Sousa.
 
 ## Objetivo e modelo de ameacas
 

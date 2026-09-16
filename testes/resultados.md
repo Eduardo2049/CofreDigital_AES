@@ -15,14 +15,14 @@ Os testes foram executados com a API conectada ao Supabase e pela interface Swag
 - Resultado esperado: `nonce` e `criptograma` diferentes.
 - Resultado observado: aprovado. A consulta retornou `nonces_diferentes = true` e `criptogramas_diferentes = true`.
 - Consulta usada: comparacao dos campos `nonce` e `criptograma` entre os titulos `teste 1` e `teste 1-2`.
-- Evidencia: `testes/evidencias/teste-1-nonces.png`
+- Evidencia: `testes/evidencias/Teste1/teste1-1.png` e `testes/evidencias/Teste1/teste1-2.png`
 
 ## Teste 2 - Senha-mestra incorreta
 
-- Procedimento: ler o segredo `e7768eae-c949-4b4d-990e-b959541c183f` usando senha-mestra incorreta.
+- Procedimento: ler o segredo `e7768eea-c949-4b4d-990e-b959541c183f` usando senha-mestra incorreta.
 - Resultado esperado: HTTP `401`, sem senha no corpo.
 - Resultado observado: aprovado. A API retornou HTTP `401 Unauthorized` com a mensagem `senha-mestra incorreta`, sem expor o segredo.
-- Evidencia: `testes/evidencias/teste-2-senha-incorreta.png`
+- Evidencia: `testes/evidencias/Teste2/Teste2.png`
 
 ## Teste 3 - Dados armazenados
 
@@ -30,7 +30,7 @@ Os testes foram executados com a API conectada ao Supabase e pela interface Swag
 - Resultado esperado: apenas campos Base64 e metadados, sem senha legivel.
 - Resultado observado: aprovado. A consulta exibiu titulo, usuario e URL, além de nonce, criptograma e etiqueta; nenhuma senha foi armazenada ou exibida.
 - Consulta usada: `select id, titulo, usuario, url, nonce, criptograma, etiqueta from public.segredos` filtrada pelo `cofre_id` testado.
-- Evidencia: `testes/evidencias/teste-3-banco.png`
+- Evidencia: `testes/evidencias/Teste3/Teste3.png`
 
 ## Teste 4 - Registro adulterado
 
@@ -38,7 +38,7 @@ Os testes foram executados com a API conectada ao Supabase e pela interface Swag
 - Resultado esperado: HTTP `500`, sem texto claro.
 - Resultado observado: aprovado. A API retornou HTTP `500` com a mensagem `registro adulterado`, sem expor o texto claro.
 - Operacao usada: alteracao de um caractere do campo `criptograma` no Supabase antes da leitura.
-- Evidencia: `testes/evidencias/teste-4-adulteracao.png`
+- Evidencia: `testes/evidencias/Teste4/Teste4.png`
 
 ## Teste 5 - Troca de criptogramas
 
@@ -46,7 +46,7 @@ Os testes foram executados com a API conectada ao Supabase e pela interface Swag
 - Resultado esperado: leitura recusada por AAD invalido, com HTTP `500`.
 - Resultado observado: aprovado. A leitura do segredo de destino retornou HTTP `500` com a mensagem `registro adulterado`, confirmando que o AAD impediu a troca entre registros.
 - Operacao usada: copia de `nonce`, `criptograma` e `etiqueta` do registro de origem para o registro de destino.
-- Evidencia: `testes/evidencias/teste-5-aad.png`
+- Evidencia: `testes/evidencias/Teste5/Teste5.png`
 
 ## Identificadores usados
 
