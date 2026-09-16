@@ -1,7 +1,5 @@
-A avaliacao ira recair integralmente sobre o codigo entregue e sobre as evidencias de que ele funciona conforme especificado.
-
-Especificacoes:
-
-
-
-
+fastapi==0.141.1
+uvicorn[standard]==0.53.0
+pycryptodome==3.23.0
+supabase==2.31.0
+python-dotenv==1.2.3
